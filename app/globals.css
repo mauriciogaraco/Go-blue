@@ -1,0 +1,166 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── Base ─────────────────────────────────────── */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #12192B;
+  color: white;
+  overflow-x: hidden;
+}
+
+/* ── Keyframes ────────────────────────────────── */
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(38px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes bubbleRise {
+  0%   { transform: translateY(0) translateX(0) scale(1);     opacity: 0;    }
+  5%   { opacity: 0.65; }
+  90%  { opacity: 0.25; }
+  100% { transform: translateY(-110vh) translateX(18px) scale(0.6); opacity: 0; }
+}
+
+@keyframes shaftPulse {
+  0%, 100% { opacity: 0.035; }
+  50%       { opacity: 0.08;  }
+}
+
+@keyframes pulseGlow {
+  0%, 100% { box-shadow: 0 4px 20px rgba(213, 108, 48, 0.35); }
+  50%       { box-shadow: 0 4px 45px rgba(213, 108, 48, 0.75); }
+}
+
+@keyframes borderGlow {
+  0%, 100% { border-color: rgba(41, 116, 121, 0.3); }
+  50%       { border-color: rgba(41, 116, 121, 0.7); }
+}
+
+@keyframes floatUp {
+  0%, 100% { transform: translateY(0px);   }
+  50%       { transform: translateY(-12px); }
+}
+
+/* ── Utility classes ──────────────────────────── */
+.animate-slide-in {
+  animation: slideInUp 0.75s ease both;
+}
+
+.animate-fade-in {
+  animation: fadeIn 1s ease both;
+}
+
+/* Bubble particle */
+.bubble {
+  position: absolute;
+  border-radius: 50%;
+  animation: bubbleRise linear infinite;
+  background: radial-gradient(
+    circle at 30% 25%,
+    rgba(255, 255, 255, 0.14),
+    rgba(41, 116, 121, 0.07)
+  );
+  border: 1px solid rgba(41, 116, 121, 0.22);
+}
+
+/* Light shaft */
+.light-shaft {
+  animation: shaftPulse 4s ease-in-out infinite;
+}
+
+/* WhatsApp / coral CTA */
+.btn-coral {
+  animation: pulseGlow 2.5s ease-in-out infinite;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.btn-coral:hover {
+  transform: translateY(-3px);
+}
+
+/* Ocean outline button */
+.btn-ocean {
+  border: 1.5px solid rgba(41, 116, 121, 0.55);
+  transition: background 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
+}
+.btn-ocean:hover {
+  background: rgba(41, 116, 121, 0.18);
+  border-color: #297479;
+  transform: translateY(-2px);
+}
+
+/* Service card */
+.card-service {
+  border: 1px solid rgba(41, 116, 121, 0.18);
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.card-service:hover {
+  transform: translateY(-6px);
+  border-color: rgba(41, 116, 121, 0.55);
+  box-shadow: 0 12px 40px rgba(41, 116, 121, 0.14);
+}
+
+/* Gradient text (headings accent) */
+.text-gradient {
+  background: linear-gradient(135deg, #3a9ba1 0%, #D56C30 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Image placeholder grid */
+.img-placeholder {
+  background: linear-gradient(135deg, rgba(41,116,121,0.14) 0%, rgba(18,25,43,0.75) 100%);
+  border: 1.5px dashed rgba(41, 116, 121, 0.35);
+  transition: border-color 0.3s ease;
+}
+.img-placeholder:hover {
+  border-color: rgba(41, 116, 121, 0.65);
+}
+
+/* Float animation for logo/hero elements */
+.float-anim {
+  animation: floatUp 4s ease-in-out infinite;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar          { width: 5px; }
+::-webkit-scrollbar-track    { background: #0d1520; }
+::-webkit-scrollbar-thumb    { background: #297479; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #D56C30; }
+
+/* Glow on ocean-colored elements */
+.glow-ocean {
+  box-shadow: 0 0 28px rgba(41, 116, 121, 0.28);
+}
+
+/* Hero radial glow */
+.hero-glow {
+  background: radial-gradient(
+    ellipse at center,
+    rgba(41, 116, 121, 0.28) 0%,
+    transparent 70%
+  );
+}
+
+/* Section divider wave (inline SVG bg helper) */
+.wave-top-navy::before {
+  content: '';
+  display: block;
+  height: 80px;
+}
