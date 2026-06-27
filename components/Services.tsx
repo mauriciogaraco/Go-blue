@@ -1,3 +1,8 @@
+'use client'
+
+import { useState } from 'react'
+import BookingModal from './BookingModal'
+
 const SERVICES = [
   {
     badge:       'Más Popular',
@@ -12,9 +17,10 @@ const SERVICES = [
     description: 'Clase teórica breve e inmersión hasta 8 metros de profundidad. Llegarás a la barrera coralina y apreciarás la fauna marina en todo su esplendor.',
     highlights:  ['Hasta 8m de profundidad', 'Barrera coralina', 'Certificación incluida', 'Sin experiencia previa'],
     cta:         'Reservar Scuba Experience',
+    booking:     true,
   },
   {
-    badge:       '32% Descuento',
+    badge:       'Certificación',
     badgeColor:  'ocean',
     icon: (
       <svg className="w-9 h-9" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.5}>
@@ -24,8 +30,9 @@ const SERVICES = [
     title:       'PSS Open Water Diver',
     subtitle:    'Certificación internacional',
     description: 'Certifícate como buceador autónomo con reconocimiento internacional PSS. Grupos de máximo 7 personas para una atención personalizada.',
-    highlights:  ['Certificación internacional', 'Máx. 7 personas', 'No requiere saber nadar', '32% dto. para la comunidad'],
+    highlights:  ['Certificación internacional', 'Máx. 7 personas', 'No requiere saber nadar', 'Atención personalizada'],
     cta:         'Inscribirme al Curso',
+    booking:     false,
   },
   {
     badge:       'Gratis',
@@ -40,16 +47,21 @@ const SERVICES = [
     description: 'Únete a nuestras jornadas de recogida de basura en Santa Fe. Dos grupos: tierra y mar. Incluye talleres de ecosistemas marinos y actividades educativas.',
     highlights:  ['Participación gratuita', 'Grupos tierra y mar', 'Talleres educativos', 'Toda la comunidad'],
     cta:         'Unirme a la próxima jornada',
+    booking:     false,
   },
 ]
 
 export default function Services() {
+  const [modalOpen, setModalOpen] = useState(false)
+
   return (
     <section
       id="servicios"
       className="relative py-24 px-4"
       style={{ background: 'linear-gradient(180deg, #1a2540 0%, #12192B 100%)' }}
     >
+      <BookingModal isOpen={modalOpen} onClose={() => setModalOpen(false)} />
+
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div className="text-center mb-14">
@@ -118,14 +130,23 @@ export default function Services() {
                 </ul>
 
                 {/* CTA */}
-                <a
-                  href="https://wa.me/5358048174"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block text-center bg-ocean/15 hover:bg-ocean/30 border border-ocean/40 hover:border-ocean text-ocean hover:text-white font-semibold text-sm px-5 py-3 rounded-xl transition-all duration-250"
-                >
-                  {s.cta} →
-                </a>
+                {s.booking ? (
+                  <button
+                    onClick={() => setModalOpen(true)}
+                    className="block w-full text-center bg-ocean/15 hover:bg-ocean/30 border border-ocean/40 hover:border-ocean text-ocean hover:text-white font-semibold text-sm px-5 py-3 rounded-xl transition-all duration-250 cursor-pointer"
+                  >
+                    {s.cta} →
+                  </button>
+                ) : (
+                  <a
+                    href="https://wa.me/5358048174"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block text-center bg-ocean/15 hover:bg-ocean/30 border border-ocean/40 hover:border-ocean text-ocean hover:text-white font-semibold text-sm px-5 py-3 rounded-xl transition-all duration-250"
+                  >
+                    {s.cta} →
+                  </a>
+                )}
               </div>
             </div>
           ))}

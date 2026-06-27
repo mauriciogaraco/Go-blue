@@ -1,3 +1,8 @@
+'use client'
+
+import { useState } from 'react'
+import BookingModal from './BookingModal'
+
 const MINI_BUBBLES = [
   { size: 5,  left: 5,  dur: 12, delay: 0   },
   { size: 8,  left: 20, dur: 9,  delay: 2   },
@@ -8,6 +13,8 @@ const MINI_BUBBLES = [
 ]
 
 export default function CTASection() {
+  const [modalOpen, setModalOpen] = useState(false)
+
   return (
     <section
       className="relative py-28 px-4 overflow-hidden"
@@ -18,6 +25,8 @@ export default function CTASection() {
         `,
       }}
     >
+      <BookingModal isOpen={modalOpen} onClose={() => setModalOpen(false)} />
+
       {/* Bubbles */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden>
         {MINI_BUBBLES.map((b, i) => (
@@ -64,15 +73,13 @@ export default function CTASection() {
         </p>
 
         {/* Main CTA */}
-        <a
-          href="https://wa.me/5358048174"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="btn-coral inline-flex items-center justify-center gap-3 bg-coral text-white px-10 py-5 rounded-full font-black text-lg sm:text-xl mb-5"
+        <button
+          onClick={() => setModalOpen(true)}
+          className="btn-coral inline-flex items-center justify-center gap-3 bg-coral text-white px-10 py-5 rounded-full font-black text-lg sm:text-xl mb-5 cursor-pointer"
         >
           <WaIcon />
           Reservar por WhatsApp
-        </a>
+        </button>
 
         <p className="text-gray-500 text-sm">
           También puedes llamarnos al{' '}
