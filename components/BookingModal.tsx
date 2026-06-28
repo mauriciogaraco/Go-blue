@@ -34,12 +34,12 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center p-4"
+      className="fixed inset-0 z-50 flex items-end sm:items-center justify-center p-0 sm:p-4"
       style={{ background: 'rgba(10,16,28,0.85)', backdropFilter: 'blur(6px)' }}
       onClick={onClose}
     >
       <div
-        className="relative w-full max-w-md rounded-2xl p-8"
+        className="relative w-full max-w-md rounded-t-2xl sm:rounded-2xl p-6 sm:p-8 max-h-[90dvh] overflow-y-auto"
         style={{
           background: 'linear-gradient(145deg, #1a2e3b 0%, #12192B 100%)',
           border: '1px solid rgba(41,116,121,0.3)',
