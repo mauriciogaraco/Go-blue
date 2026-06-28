@@ -7,12 +7,12 @@
  */
 
 const GALLERY = [
-  { src: "/assets/gallery-1.jpg", alt: "Inmersión en la barrera coralina" },
-  { src: "/assets/gallery-2.jpg", alt: "Fauna marina de Cuba" },
-  { src: "/assets/gallery-3.jpg", alt: "Equipo GoBlue en acción" },
-  { src: "/assets/gallery-4.jpg", alt: "Certificación PSS Open Water" },
-  { src: "/assets/gallery-5.jpg", alt: "Limpieza costera Santa Fe" },
-  { src: "/assets/gallery-6.jpg", alt: "Buceo recreativo La Habana" },
+  { src: "/assets/images/1.webp", alt: "Inmersión en la barrera coralina" },
+  { src: "/assets/images/2.webp", alt: "Fauna marina de Cuba" },
+  { src: "/assets/images/3.webp", alt: "Equipo GoBlue en acción" },
+  { src: "/assets/images/4.webp", alt: "Certificación PSS Open Water" },
+  { src: "/assets/images/5.webp", alt: "Limpieza costera Santa Fe" },
+  { src: "/assets/images/6.webp", alt: "Buceo recreativo La Habana" },
 ];
 
 function GallerySlot({
