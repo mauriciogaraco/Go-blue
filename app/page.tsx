@@ -1,5 +1,6 @@
 import Navbar from '@/components/Navbar'
 import Hero from '@/components/Hero'
+import Offer from '@/components/Offer'
 import Pillars from '@/components/Pillars'
 import Services from '@/components/Services'
 import About from '@/components/About'
@@ -14,6 +15,7 @@ export default function Home() {
     <main className="bg-navy min-h-screen overflow-x-hidden">
       <Navbar />
       <Hero />
+      <Offer />
       <Pillars />
       <Services />
       <About />

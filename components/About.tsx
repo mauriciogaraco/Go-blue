@@ -92,7 +92,7 @@ export default function About() {
               style={{ aspectRatio: "4/3" }}
             >
               <img
-                src="/assets/images/7.webp"
+                src="/assets/images/9.webp"
                 alt="GoBlue Diving Project — Santa Fe, La Habana"
                 className="w-full h-full object-cover"
               />

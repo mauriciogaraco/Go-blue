@@ -8,7 +8,7 @@
 
 const GALLERY = [
   { src: "/assets/images/1.webp", alt: "Inmersión en la barrera coralina" },
-  { src: "/assets/images/2.webp", alt: "Fauna marina de Cuba" },
+  { src: "/assets/images/7.webp", alt: "Fauna marina de Cuba" },
   { src: "/assets/images/3.webp", alt: "Equipo GoBlue en acción" },
   { src: "/assets/images/4.webp", alt: "Certificación PSS Open Water" },
   { src: "/assets/images/5.webp", alt: "Limpieza costera Santa Fe" },

@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import Logo from "../assets/Gemini_Generated_Image_8k77p28k77p28k77 (1).png";
 const NAV_LINKS = [
+  { href: "#oferta", label: "Oferta" },
   { href: "#servicios", label: "Servicios" },
   { href: "#nosotros", label: "Nosotros" },
   { href: "#galeria", label: "Galería" },
