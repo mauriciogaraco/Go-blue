@@ -5,6 +5,7 @@ node_modules/
 .next/
 out/
 build/
+*.tsbuildinfo
 
 # Variables de entorno (¡Súper importante protegerlas!)
 .env

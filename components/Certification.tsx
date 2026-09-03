@@ -14,11 +14,6 @@ const FEATURES = [
     title: 'Sin Requisitos Previos',
     desc: 'Para bucear no hace falta saber nadar. Nuestro equipo te guía desde cero con total seguridad.',
   },
-  {
-    icon: '💰',
-    title: '32% de Descuento',
-    desc: 'Precio especial para nuestra comunidad. Una oportunidad única para certificarte a un costo accesible.',
-  },
 ]
 
 export default function Certification() {
@@ -50,17 +45,8 @@ export default function Certification() {
       <div className="relative z-10 max-w-5xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
 
-          {/* Left: discount badge + title */}
+          {/* Left: title */}
           <div>
-            {/* Discount badge */}
-            <div className="inline-flex items-center gap-2 bg-coral text-white text-xs font-black tracking-widest uppercase px-4 py-2 rounded-full mb-6 shadow-lg">
-              <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M9.568 3H5.25A2.25 2.25 0 003 5.25v4.318c0 .597.237 1.17.659 1.591l9.581 9.581c.699.699 1.78.872 2.607.33a18.095 18.095 0 005.223-5.223c.542-.827.369-1.908-.33-2.607L9.568 3z" />
-                <path d="M6 6h.008v.008H6V6z" />
-              </svg>
-              32% Descuento para la comunidad
-            </div>
-
             <span className="block text-white/60 font-semibold tracking-[0.35em] text-xs uppercase mb-3">
               Certificación oficial
             </span>
